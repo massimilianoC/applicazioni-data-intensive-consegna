@@ -60,7 +60,6 @@ model_loaded = load_model_components()
 
 @app.route('/')
 def home():
-    """Form per inserimento dati"""
     if not model_loaded:
         return """
         <html><body style="font-family: Arial; text-align: center; padding: 50px;">
@@ -79,7 +78,6 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    """Endpoint previsioni"""
     if not model_loaded:
         return jsonify({
             'success': False, 
@@ -189,7 +187,6 @@ def predict():
 
 @app.route('/random_data')
 def random_data():
-    """Generare dati casuali"""
     if not model_loaded:
         return jsonify({
             'success': False, 
